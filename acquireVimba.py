@@ -1,25 +1,30 @@
 
-#good info on ssaving : https://github.com/morefigs/pymba/issues/13
-# http://anki.xyz/installing-pymba-on-windows/
-# https://github.com/morefigs/pymba/issues/13
+"""
+Author: Matthew J. Davis
 
-# 30hz, 120 buffer seemed to work
-    # 
-# 60hz, 120 had some double images, maybe buffer bigger
+RESOURCES
+https://github.com/morefigs/pymba/issues/13
+http://anki.xyz/installing-pymba-on-windows/
+https://github.com/morefigs/pymba/issues/13
 
-'''
-Need:
-1)> opencv 3.2
-2) tifffile (conda install tifffile -c conda-forge)
-3)pymba
-4) Vimba  SDK
+NOTES
+30hz, 120 buffer seemed to work
+60hz, 120 had some double images, maybe buffer bigger
+
+REQUIRES
+1) opencv 3.2
+2) tifffile
+3) pymba (https://github.com/morefigs/pymba)
+4) Vimba SDK
 
 SelectROI bug fix
 conda install opencv-contrib-python
 conda install -c menpo opencv3 
 opencv-contrib-python     3.3.1.11 
 opencv3                   3.1.0
-'''
+
+"""
+
 import os.path
 from datetime import datetime
 import argparse
@@ -50,7 +55,7 @@ def set_freerun_parameters(camera0):
 
 
 def set_acquisition_parameters(camera0):
-	# standards for pupil recording during treadmill running
+    # standards for pupil recording during treadmill running
     camera0.PixelFormat = 'Mono8'
     camera0.AcquisitionFrameRateAbs = 30
     
